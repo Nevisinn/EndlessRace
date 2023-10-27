@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wall
   - Spawn Trigger
+  - Spawn Trigger Bots
   layers:
   - Default
   - TransparentFX

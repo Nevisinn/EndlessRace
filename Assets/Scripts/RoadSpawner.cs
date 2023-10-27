@@ -9,16 +9,6 @@ public class RoadSpawner : MonoBehaviour
     private List<GameObject> roadPrefabs;
     private float offset = 608f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        Debug.Log(roadPrefabs[0].transform.position.z);
-        Debug.Log(roadPrefabs[1].transform.position.z);
-    }
-
-    // Update is called once per frame
-    void Update() { }
-
     public void MoveRoad()
     {
         GameObject moveRoad = roadPrefabs[0];

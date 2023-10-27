@@ -1069,7 +1069,13 @@ public class CarController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("COllision detected");
-        spawnManager.SpawnTriggerEntered();
+        print(other.gameObject.tag);
+
+        if (other.gameObject.tag == "Spawn Trigger")
+            spawnManager.SpawnRoad();
+        if (other.gameObject.tag == "Spawn Trigger Bots")
+        {
+            spawnManager.SpawnBots();
+        }
     }
 }
