@@ -141,7 +141,7 @@ public class CarController : MonoBehaviour
     public int accelerationMultiplier = 2; // How fast the car can accelerate. 1 is a slow acceleration and 10 is the fastest.
 
     [Space(10)]
-    [Range(10, 45)]
+    [Range(1, 45)]
     public int maxSteeringAngle = 27; // The maximum angle that the tires can reach while rotating the steering wheel.
 
     [Range(0.1f, 1f)]
@@ -245,8 +245,8 @@ public class CarController : MonoBehaviour
 
     //CAR DATA
 
-    [HideInInspector]
-    public float carSpeed; // Used to store the speed of the car.
+    [SerializeField]
+    public float carSpeed = 15; // Used to store the speed of the car.
 
     [HideInInspector]
     public bool isDrifting; // Used to know whether the car is drifting or not.
@@ -722,16 +722,16 @@ public class CarController : MonoBehaviour
     {
         //If the forces aplied to the rigidbody in the 'x' asis are greater than
         //3f, it means that the car is losing traction, then the car will start emitting particle systems.
-        if (Mathf.Abs(localVelocityX) > 2.5f)
-        {
-            isDrifting = true;
-            DriftCarPS();
-        }
-        else
-        {
-            isDrifting = false;
-            DriftCarPS();
-        }
+        // if (Mathf.Abs(localVelocityX) > 2.5f)
+        // {
+        //     isDrifting = true;
+        //     DriftCarPS();
+        // }
+        // else
+        // {
+        //     isDrifting = false;
+        //     DriftCarPS();
+        // }
         // The following part sets the throttle power to 1 smoothly.
         throttleAxis = throttleAxis + (Time.deltaTime * 3f);
         if (throttleAxis > 1f)
@@ -777,16 +777,16 @@ public class CarController : MonoBehaviour
     {
         //If the forces aplied to the rigidbody in the 'x' asis are greater than
         //3f, it means that the car is losing traction, then the car will start emitting particle systems.
-        if (Mathf.Abs(localVelocityX) > 2.5f)
-        {
-            isDrifting = true;
-            DriftCarPS();
-        }
-        else
-        {
-            isDrifting = false;
-            DriftCarPS();
-        }
+        // if (Mathf.Abs(localVelocityX) > 2.5f)
+        // {
+        //     isDrifting = true;
+        //     DriftCarPS();
+        // }
+        // else
+        // {
+        //     isDrifting = false;
+        //     DriftCarPS();
+        // }
         // The following part sets the throttle power to -1 smoothly.
         throttleAxis = throttleAxis - (Time.deltaTime * 3f);
         if (throttleAxis < -1f)
@@ -802,27 +802,27 @@ public class CarController : MonoBehaviour
         }
         else
         {
-            if (Mathf.Abs(Mathf.RoundToInt(carSpeed)) < maxReverseSpeed)
+            if (Mathf.Abs(Mathf.RoundToInt(carSpeed)) < maxReverseSpeed && carSpeed > 20)
             {
                 //Apply negative torque in all wheels to go in reverse if maxReverseSpeed has not been reached.
                 frontLeftCollider.brakeTorque = 0;
-                frontLeftCollider.motorTorque = (accelerationMultiplier * 50f) * throttleAxis;
+                frontLeftCollider.motorTorque = accelerationMultiplier * 50f * throttleAxis;
                 frontRightCollider.brakeTorque = 0;
-                frontRightCollider.motorTorque = (accelerationMultiplier * 50f) * throttleAxis;
+                frontRightCollider.motorTorque = accelerationMultiplier * 50f * throttleAxis;
                 rearLeftCollider.brakeTorque = 0;
-                rearLeftCollider.motorTorque = (accelerationMultiplier * 50f) * throttleAxis;
+                rearLeftCollider.motorTorque = accelerationMultiplier * 50f * throttleAxis;
                 rearRightCollider.brakeTorque = 0;
-                rearRightCollider.motorTorque = (accelerationMultiplier * 50f) * throttleAxis;
+                rearRightCollider.motorTorque = accelerationMultiplier * 50f * throttleAxis;
             }
             else
             {
                 //If the maxReverseSpeed has been reached, then stop applying torque to the wheels.
                 // IMPORTANT: The maxReverseSpeed variable should be considered as an approximation; the speed of the car
                 // could be a bit higher than expected.
-                frontLeftCollider.motorTorque = 0;
-                frontRightCollider.motorTorque = 0;
-                rearLeftCollider.motorTorque = 0;
-                rearRightCollider.motorTorque = 0;
+                frontLeftCollider.motorTorque = 20;
+                frontRightCollider.motorTorque = 20;
+                rearLeftCollider.motorTorque = 20;
+                rearRightCollider.motorTorque = 20;
             }
         }
     }
@@ -1071,11 +1071,19 @@ public class CarController : MonoBehaviour
     {
         print(other.gameObject.tag);
 
-        if (other.gameObject.tag == "Spawn Trigger")
+        if (other.gameObject.CompareTag("Spawn Trigger"))
             spawnManager.SpawnRoad();
         if (other.gameObject.tag == "Spawn Trigger Bots")
         {
             spawnManager.SpawnBots();
+        }
+        if (other.gameObject.tag == "Death Trigger")
+        {
+            print("GameOver");
+        }
+        if (other.gameObject.tag == "Scores Trigger")
+        {
+            print("Scores +100");
         }
     }
 }

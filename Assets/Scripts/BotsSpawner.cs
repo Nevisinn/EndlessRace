@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using UnityEngine;
 
@@ -29,16 +30,26 @@ public class BotsSpawner : MonoBehaviour
     public void SpawnBots()
     {
         var lastPos = botsGroup[botsGroup.Count - 1];
-        int carsCount = Random.Range(lastPos.Count / 4, lastPos.Count + 1);
+        int carsCount = Random.Range(lastPos.Count / 8, lastPos.Count + 1);
         var randomNumbers = Enumerable.Range(0, 16).OrderBy(k => Random.Range(0, 16)).ToArray();
+        print(carsCount);
+        print(string.Join(" ", randomNumbers));
         for (int i = 0; i < carsCount; i++)
         {
+            int random = Random.Range(350 + 20 * i, 365 + 20 * i);
+            print(
+                new Vector3(
+                    lastPos[randomNumbers[i]].transform.position.x,
+                    lastPos[randomNumbers[i]].transform.position.y,
+                    playerTransform.position.z - random
+                )
+            );
             Instantiate(
                 botsPrefabs[Random.Range(0, botsPrefabs.Count)],
                 new Vector3(
                     lastPos[randomNumbers[i]].transform.position.x,
                     lastPos[randomNumbers[i]].transform.position.y,
-                    playerTransform.position.z - Random.Range(400, 400 + 50 * i)
+                    playerTransform.position.z - random
                 ),
                 Quaternion.identity,
                 temp.transform
