@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Wall
+  - Spawn Trigger
+  - Spawn Trigger Bots
+  - Death Trigger
+  - Scores Trigger
   layers:
   - Default
   - TransparentFX
