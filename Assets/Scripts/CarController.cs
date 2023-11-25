@@ -283,6 +283,8 @@ public class CarController : MonoBehaviour
     WheelFrictionCurve RRwheelFriction;
     float RRWextremumSlip;
 
+    private Scores scores = new Scores();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -1084,7 +1086,7 @@ public class CarController : MonoBehaviour
         }
         if (other.gameObject.tag == "Scores Trigger")
         {
-            print("Scores +100");
+            scores.AddScores(200);
         }
     }
 }
