@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CarSelectAnimation : MonoBehaviour
 {
+    [NonSerialized]
     public bool isRotate = false;
     private Quaternion originalPos;
 
@@ -20,12 +23,12 @@ public class CarSelectAnimation : MonoBehaviour
 
     public void RotateLeft()
     {
-        transform.RotateAround(gameObject.transform.position, -Vector3.up, 20 * Time.deltaTime);
+        transform.RotateAround(gameObject.transform.position, -Vector3.up, 100 * Time.deltaTime);
     }
 
     public void RotateRight()
     {
-        transform.RotateAround(gameObject.transform.position, Vector3.up, 20 * Time.deltaTime);
+        transform.RotateAround(gameObject.transform.position, Vector3.up, 100 * Time.deltaTime);
     }
 
     public void Rotate()

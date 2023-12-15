@@ -502,10 +502,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8068628924939165654}
-    - targetCorrespondingSourceObject: {fileID: 3311311803080157842, guid: 133308cdb8794744caaef026bde9e1f0,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 60351864662496191}
   m_SourcePrefab: {fileID: 100100000, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
 --- !u!1 &61012364475270673 stripped
 GameObject:
@@ -537,6 +533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d318dc0e3093926408db0ac7655cb81b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  endGame: {fileID: 0}
   spawnManager: {fileID: 0}
   maxSpeed: 200
   maxReverseSpeed: 120
@@ -574,30 +571,6 @@ MonoBehaviour:
   carSpeed: 15
   isDrifting: 0
   isTractionLocked: 0
---- !u!114 &60351864662496191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1505800422444925557}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3a427a3e587dda44974271b6f2d8e0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  frontLeftMesh: {fileID: 7209018752373695751}
-  frontLeftCollider: {fileID: 2063568050351919201}
-  frontRightMesh: {fileID: 3671214005359638720}
-  frontRightCollider: {fileID: 8907885622403482246}
-  rearLeftMesh: {fileID: 5338959330006471952}
-  rearLeftCollider: {fileID: 1348756074460095763}
-  rearRightMesh: {fileID: 61012364475270673}
-  rearRightCollider: {fileID: 4016492915631698484}
-  currentSpeed: 12
-  maxSpeed: 213
-  turningSpeed: 10
-  maxSteerAngle: 15
 --- !u!146 &2063568050351919201 stripped
 WheelCollider:
   m_CorrespondingSourceObject: {fileID: 2716459193614891142, guid: 133308cdb8794744caaef026bde9e1f0,
