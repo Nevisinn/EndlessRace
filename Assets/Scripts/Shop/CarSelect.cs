@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using YG;
 
 public class CarSelect : MonoBehaviour
 {
@@ -18,20 +19,25 @@ public class CarSelect : MonoBehaviour
 
     private void Awake()
     {
+        foreach (var index in YandexGame.savesData.indexPurchasedCars)
+            print(index);
+        foreach (var car in cars)
+            car.isActiveCar = false;
         SelectCar(0);
         carSelectAnimation = GetComponent<CarSelectAnimation>();
     }
 
     private void SelectCar(int index)
     {
+        print(index);
         for (int i = 0; i < transform.childCount; i++)
         {
-            print(cars[1].gameObject);
-            cars[0].gameObject.SetActive(i == index);
-            carPurchaseBtn.carInfo = cars[index];
-            carPurchaseBtn.SetPurchaseBtn();
-            nextBtn.SetNextBtn(cars[i]);
+            cars[i].gameObject.SetActive(i == index);
         }
+        carPurchaseBtn.carInfo = cars[index];
+        carPurchaseBtn.SetPurchaseBtn();
+        nextBtn.carInfo = cars[index];
+        nextBtn.SetNextBtn();
     }
 
     public void ChangeCar(int change)

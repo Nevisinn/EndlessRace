@@ -6,10 +6,12 @@ using UnityEngine;
 
 public class Distance : MonoBehaviour
 {
-    public static int totalDistance;
+    public int TotalDistance;
+    private Transform playerTransform;
+    Scores scores;
 
     [SerializeField]
-    private Transform playerTransform;
+    GameObject models;
 
     [SerializeField]
     private TextMeshProUGUI currDistance;
@@ -17,8 +19,15 @@ public class Distance : MonoBehaviour
     private float time;
     private float timeDelay = 0.5f;
 
-    void Start()
+    void Awake()
     {
+        scores = gameObject.GetComponent<Scores>();
+        var cars = models.GetComponent<ActiveCar>().CarsInfo;
+        foreach (var car in cars)
+        {
+            if (car.gameObject.activeSelf)
+                playerTransform = car.gameObject.GetComponent<Transform>();
+        }
         oldPos = playerTransform.position;
     }
 
@@ -28,10 +37,10 @@ public class Distance : MonoBehaviour
         if (time >= timeDelay)
         {
             time = 0f;
-            totalDistance += (int)Math.Round((playerTransform.position - oldPos).magnitude);
+            TotalDistance += (int)Math.Round((playerTransform.position - oldPos).magnitude);
             oldPos = playerTransform.position;
-            currDistance.text = totalDistance.ToString();
-            Scores.AddScores(1);
+            currDistance.text = TotalDistance.ToString();
+            scores.AddScores(1);
         }
     }
 }

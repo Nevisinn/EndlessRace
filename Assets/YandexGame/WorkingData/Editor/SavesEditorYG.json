@@ -1,0 +1,28 @@
+{
+    "idSave": 39,
+    "isFirstSession": false,
+    "language": "ru",
+    "promptDone": false,
+    "money": 1,
+    "newPlayerName": "Hello!",
+    "openLevels": [
+        false,
+        true,
+        false
+    ],
+    "Money": 16526,
+    "indexPurchasedCars": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+    ],
+    "lastCar": 0,
+    "recordDistance": 0
+}
