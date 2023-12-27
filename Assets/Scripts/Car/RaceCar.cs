@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,13 +8,10 @@ using YG;
 
 public class RaceCar : CarInfo
 {
-    private void Awake()
+    private void Start()
     {
         indexCar = 0;
-        if (YandexGame.savesData.indexPurchasedCars.Contains(this.indexCar))
-        {
-            isPurchased = true;
-        }
+        isPurchased = YandexGame.savesData.indexPurchasedCars.Contains(this.indexCar);
         carCost = 0;
         maxSpeed = 150;
         accelerationMultiplier = 2;

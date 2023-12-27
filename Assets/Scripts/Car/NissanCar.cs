@@ -6,15 +6,12 @@ using System.Linq;
 
 public class NissanCar : CarInfo
 {
-    void Awake()
+    private void Start()
     {
         indexCar = 1;
         carCost = 500;
         maxSpeed = 200;
         accelerationMultiplier = 5;
-        if (YandexGame.savesData.indexPurchasedCars.Contains(this.indexCar))
-        {
-            isPurchased = true;
-        }
+        isPurchased = YandexGame.savesData.indexPurchasedCars.Contains(this.indexCar);
     }
 }

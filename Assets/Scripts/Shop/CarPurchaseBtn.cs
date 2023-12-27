@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using YG;
 
 public class CarPurchaseBtn : MonoBehaviour
@@ -14,13 +15,18 @@ public class CarPurchaseBtn : MonoBehaviour
     [SerializeField]
     NextBtn nextBtn;
 
+    [SerializeField]
+    private Button purchaseBtn;
+
     public void SetPurchaseBtn()
     {
         print(carInfo);
-        this.gameObject.SetActive(false);
         carCostTxt.text = $"Купить за {carInfo.carCost}";
+        if (carInfo.isPurchased)
+            carCostTxt.text = $"Куплено";
+        purchaseBtn.interactable = false;
         if (!carInfo.isPurchased && YandexGame.savesData.Money >= carInfo.carCost)
-            this.gameObject.SetActive(true);
+            purchaseBtn.interactable = true;
     }
 
     public void BuyCar()

@@ -26,11 +26,11 @@ public class Trigger : MonoBehaviour
         {
             spawnManager.SpawnBots();
         }
-        if (other.gameObject.CompareTag("Death Trigger"))
-        {
-            Time.timeScale = 0f;
-            endGame.End(distance.TotalDistance, scores.TotalScores);
-        }
+        // if (other.gameObject.CompareTag("Death Trigger"))
+        // {
+        //     Time.timeScale = 0f;
+        //     endGame.End(distance.TotalDistance, scores.TotalScores);
+        // }
         if (other.gameObject.CompareTag("Scores Trigger"))
         {
             scores.AddScores(200);

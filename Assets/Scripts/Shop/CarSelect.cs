@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,12 @@ public class CarSelect : MonoBehaviour
     [SerializeField]
     NextBtn nextBtn;
 
+    [SerializeField]
+    private Stats stats;
+
+    [SerializeField]
+    private AboutCar aboutCar;
+
     private void Awake()
     {
         foreach (var index in YandexGame.savesData.indexPurchasedCars)
@@ -33,11 +40,14 @@ public class CarSelect : MonoBehaviour
         for (int i = 0; i < transform.childCount; i++)
         {
             cars[i].gameObject.SetActive(i == index);
+            aboutCar.cars[i].SetActive(i == index);
         }
         carPurchaseBtn.carInfo = cars[index];
         carPurchaseBtn.SetPurchaseBtn();
         nextBtn.carInfo = cars[index];
         nextBtn.SetNextBtn();
+        stats.carInfo = cars[index];
+        stats.SetStats();
     }
 
     public void ChangeCar(int change)

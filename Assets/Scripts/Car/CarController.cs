@@ -1,112 +1,3 @@
-// using System;
-// using System.Collections;
-// using System.Collections.Generic;
-// using Unity.VisualScripting;
-// using UnityEngine;
-
-// class CarController : MonoBehaviour
-// {
-//     private float horizontalInput
-//     {
-//         get => Input.GetAxis("Horizontal");
-//     }
-
-//     private bool isBreaking
-//     {
-//         get => Input.GetKey(KeyCode.Space);
-//     }
-
-//     [SerializeField]
-//     private float steerAngle;
-
-//     [SerializeField]
-//     private WheelCollider FrontLeftWheelCollider;
-
-//     [SerializeField]
-//     private WheelCollider FrontRightWheelCollider;
-
-//     [SerializeField]
-//     private WheelCollider RearLeftWheelCollider;
-
-//     [SerializeField]
-//     private WheelCollider RearRightWheelCollider;
-
-//     [SerializeField]
-//     private Transform FrontLeftWheelTransform;
-
-//     [SerializeField]
-//     private Transform FrontRightWheelTransform;
-
-//     [SerializeField]
-//     private Transform RearLeftWheelTransform;
-
-//     [SerializeField]
-//     private Transform RearRightWheelTransform;
-
-//     [SerializeField]
-//     private float maxSteeringAngle;
-
-//     [SerializeField]
-//     public float currentSpeed = 200;
-
-//     [SerializeField]
-//     private float MaxSpeed = 1500f;
-
-//     private float brakeForce;
-
-//     private void FixedUpdate()
-//     {
-//         HandleMotor();
-//         HandleSteering();
-//         UpdateWheels();
-//     }
-
-//     void HandleSteering()
-//     {
-//         steerAngle = maxSteeringAngle * horizontalInput;
-//         FrontLeftWheelCollider.steerAngle = steerAngle;
-//         FrontRightWheelCollider.steerAngle = steerAngle;
-//     }
-
-//     void HandleMotor()
-//     {
-//         if (Input.GetKey(KeyCode.W))
-//         {
-//             if (currentSpeed != MaxSpeed)
-//                 currentSpeed += 1f;
-//         }
-//         else if (currentSpeed != 0)
-//         {
-//             currentSpeed -= 1f;
-//         }
-
-//         FrontLeftWheelCollider.motorTorque = currentSpeed;
-//         FrontRightWheelCollider.motorTorque = currentSpeed;
-
-//         brakeForce = isBreaking ? 10000f : 0f;
-//         FrontLeftWheelCollider.brakeTorque = brakeForce;
-//         FrontRightWheelCollider.brakeTorque = brakeForce;
-//         RearLeftWheelCollider.brakeTorque = brakeForce;
-//         RearRightWheelCollider.brakeTorque = brakeForce;
-//     }
-
-//     void UpdateWheels()
-//     {
-//         UpdateWheelPos(FrontLeftWheelCollider, FrontLeftWheelTransform);
-//         UpdateWheelPos(FrontRightWheelCollider, FrontRightWheelTransform);
-//         UpdateWheelPos(RearLeftWheelCollider, RearLeftWheelTransform);
-//         UpdateWheelPos(RearRightWheelCollider, RearRightWheelTransform);
-//     }
-
-//     void UpdateWheelPos(WheelCollider wheelCollider, Transform trans)
-//     {
-//         Vector3 pos;
-//         Quaternion rot;
-//         wheelCollider.GetWorldPose(out pos, out rot);
-//         trans.rotation = rot;
-//         trans.position = pos;
-//     }
-// }
 /*
 MESSAGE FROM CREATOR: This script was coded by Mena. You can use it in your games either these are commercial or
 personal projects. You can even add or remove functions as you wish. However, you cannot sell copies of this
@@ -284,16 +175,11 @@ public class CarController : MonoBehaviour
 
     // Start is called before the first frame update
 
-    void Awake()
+    void Start()
     {
         carInfo = this.gameObject.GetComponent<CarInfo>();
         accelerationMultiplier = carInfo.accelerationMultiplier;
         maxSpeed = carInfo.maxSpeed;
-        print(carInfo);
-    }
-
-    void Start()
-    {
         //In this part, we set the 'carRigidbody' value with the Rigidbody attached to this
         //gameObject. Also, we define the center of mass of the car with the Vector3 given
         //in the inspector.

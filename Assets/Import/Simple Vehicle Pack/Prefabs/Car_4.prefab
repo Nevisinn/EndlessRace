@@ -429,7 +429,7 @@ GameObject:
   - component: {fileID: 6861831487376126705}
   m_Layer: 0
   m_Name: Car_4
-  m_TagString: Untagged
+  m_TagString: Death Trigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -532,7 +532,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8595702326976134561
 Transform:
   m_ObjectHideFlags: 0
@@ -662,8 +662,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.3998495, y: 0.9999997, z: 1}
+  m_Center: {x: 0.010586218, y: 0, z: 0}
 --- !u!1 &8277100663062229643
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,7 +681,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5673861206528932586
 Transform:
   m_ObjectHideFlags: 0

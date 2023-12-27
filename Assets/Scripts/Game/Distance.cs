@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.Rendering;
 using UnityEngine;
+using YG;
 
 public class Distance : MonoBehaviour
 {
@@ -19,16 +21,19 @@ public class Distance : MonoBehaviour
     private float time;
     private float timeDelay = 0.5f;
 
-    void Awake()
+    void Start()
     {
         scores = gameObject.GetComponent<Scores>();
         var cars = models.GetComponent<ActiveCar>().CarsInfo;
         foreach (var car in cars)
         {
+            print(car);
+            print(car.gameObject.activeSelf);
             if (car.gameObject.activeSelf)
                 playerTransform = car.gameObject.GetComponent<Transform>();
         }
         oldPos = playerTransform.position;
+        print(playerTransform);
     }
 
     void Update()

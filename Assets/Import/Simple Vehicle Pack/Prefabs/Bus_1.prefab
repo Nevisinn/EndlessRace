@@ -346,7 +346,7 @@ GameObject:
   - component: {fileID: 3892818652550035892}
   m_Layer: 0
   m_Name: Bus_1
-  m_TagString: Untagged
+  m_TagString: Death Trigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -566,8 +566,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.1431142, y: 1, z: 1}
+  m_Center: {x: 0.009075156, y: 0, z: 0}
 --- !u!1 &1134818134578794132
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,7 +619,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2935370824394549323
 Transform:
   m_ObjectHideFlags: 0
@@ -681,7 +681,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3943613978001657826
 Transform:
   m_ObjectHideFlags: 0
