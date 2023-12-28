@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using YG;
 
 public class Pause : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class Pause : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPause = false;
+        YandexGame.SaveProgress();
     }
 
     public void PauseOn()

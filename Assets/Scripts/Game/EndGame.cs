@@ -20,6 +20,11 @@ public class EndGame : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI moneyTxt;
 
+    [SerializeField]
+    private GameObject audioSources;
+
+    [SerializeField]
+    private AudioSource accidentSound;
     private int money;
 
     bool isRewardBtnClick;
@@ -31,6 +36,8 @@ public class EndGame : MonoBehaviour
         totalDistanceTxt.text = distance.ToString();
         totalScoresTxt.text = scores.ToString();
         moneyTxt.text = money.ToString();
+        audioSources.SetActive(false);
+        accidentSound.Play();
         YandexGame.NewLeaderboardScores("LeaderBordDistance", distance);
     }
 

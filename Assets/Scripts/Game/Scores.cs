@@ -13,6 +13,7 @@ public class Scores : MonoBehaviour
 
     void Update()
     {
+        print(AudioListener.volume);
         print(currScores);
         currScores.text = TotalScores.ToString();
     }

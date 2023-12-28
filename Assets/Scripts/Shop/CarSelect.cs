@@ -26,17 +26,20 @@ public class CarSelect : MonoBehaviour
 
     private void Awake()
     {
-        foreach (var index in YandexGame.savesData.indexPurchasedCars)
-            print(index);
         foreach (var car in cars)
             car.isActiveCar = false;
-        SelectCar(0);
+
         carSelectAnimation = GetComponent<CarSelectAnimation>();
+    }
+
+    private void Start()
+    {
+        currentCar = YandexGame.savesData.lastCar;
+        SelectCar(currentCar);
     }
 
     private void SelectCar(int index)
     {
-        print(index);
         for (int i = 0; i < transform.childCount; i++)
         {
             cars[i].gameObject.SetActive(i == index);

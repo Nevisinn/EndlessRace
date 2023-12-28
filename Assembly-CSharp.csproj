@@ -109,6 +109,7 @@
     <Compile Include="Assets\Scripts\Shop\CarPurchaseBtn.cs" />
     <Compile Include="Assets\Scripts\Car\NissanCar.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
+    <Compile Include="Assets\Scripts\Setting.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\YandexGame\Example\Scripts\ReceivingPurchaseExample.cs" />
     <Compile Include="Assets\Scripts\Shop\TotalMoney.cs" />
@@ -121,7 +122,6 @@
     <Compile Include="Assets\YandexGame\ScriptsYG\Payments\PurchaseYG.cs" />
     <Compile Include="Assets\Scripts\Game\SpawnManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
-    <Compile Include="Assets\Scripts\ResetProgress.cs" />
     <Compile Include="Assets\Scripts\Game\EndGame.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\TimerBeforeAdsYG.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
@@ -137,6 +137,7 @@
     <Compile Include="Assets\Import\PROMETEO - Car Controller\Scripts\PrometeoTouchInput.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\GameReadyAPI\GRA_yg.cs" />
     <Compile Include="Assets\Scripts\Car\MovingRacingCar.cs" />
+    <Compile Include="Assets\UI button pack 2\Scene\CreateObj.cs" />
     <Compile Include="Assets\Import\RetrowaveShaders\Scenes\RotateStars.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\Scripts\Game\BotsSpawner.cs" />
@@ -150,6 +151,7 @@
     <Compile Include="Assets\YandexGame\ScriptsYG\UnityToolbag-main\ConditionallyVisiblePropertyDrawer\Runtime\ConditionallyVisibleAttribute.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\Scripts\Shop\AboutCar.cs" />
+    <Compile Include="Assets\Scripts\MusicController.cs" />
     <Compile Include="Assets\YandexGame\ScriptsYG\Payments\UtilsPayments.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
@@ -192,6 +194,7 @@
     <None Include="Assets\Sketchfab For Unity\Dependencies\Shaders\GLTFFlipTexture.shader" />
     <None Include="Assets\Sketchfab For Unity\Dependencies\Shaders\GLTFColorSpace.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\Import\Car Engine Sound - i6 German Free\Documentation\Read Me.txt" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
     <None Include="Assets\Sketchfab For Unity\Dependencies\Shaders\GLTFPackOccMetalRough.shader" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
@@ -200,6 +203,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\WebGLTemplates\Notices.txt" />
     <None Include="Assets\WebGLTemplates\LICENSE.txt" />
+    <None Include="Assets\Import\Car Engine Sound - i6 German Free\Assets\Audio\Read Me.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />

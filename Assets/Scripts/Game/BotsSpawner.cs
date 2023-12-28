@@ -13,8 +13,7 @@ public class BotsSpawner : MonoBehaviour
     [SerializeField]
     private List<GameObject> positions;
 
-    [SerializeField]
-    private Transform playerTransform;
+    public Transform playerTransform;
 
     [SerializeField]
     private List<GameObject> tempList;

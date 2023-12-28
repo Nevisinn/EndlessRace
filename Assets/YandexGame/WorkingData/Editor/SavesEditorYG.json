@@ -1,5 +1,5 @@
 {
-    "idSave": 63,
+    "idSave": 216,
     "isFirstSession": false,
     "language": "ru",
     "promptDone": false,
@@ -10,7 +10,7 @@
         true,
         false
     ],
-    "Money": 22651,
+    "Money": 22492,
     "indexPurchasedCars": [
         0,
         1,
@@ -23,6 +23,10 @@
         0,
         0
     ],
-    "lastCar": 0,
-    "recordDistance": 0
+    "lastCar": 1,
+    "recordDistance": 0,
+    "sliderTotalVolume": 0.575641393661499,
+    "sliderCarVolume": 0.0,
+    "sliderMusicVolume": 0.6713695526123047,
+    "inVHSOn": true
 }

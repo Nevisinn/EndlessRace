@@ -7,6 +7,12 @@ using YG;
 
 public class ActiveCar : MonoBehaviour
 {
+    [SerializeField]
+    private BotsSpawner botsSpawner;
+
+    [SerializeField]
+    private AudioController audioController;
+
     // Подписываемся на событие GetDataEvent в OnEnable
     private void OnEnable() => YandexGame.GetDataEvent += GetLoad;
 
@@ -25,9 +31,16 @@ public class ActiveCar : MonoBehaviour
     {
         foreach (var car in CarsInfo)
         {
-            print(YandexGame.savesData.lastCar);
-            print(car.indexCar);
-            car.gameObject.SetActive(car.indexCar == YandexGame.savesData.lastCar);
+            if (car.indexCar == YandexGame.savesData.lastCar)
+            {
+                car.gameObject.SetActive(true);
+                botsSpawner.playerTransform = car.gameObject.GetComponent<Transform>();
+                var audioSource = car.gameObject
+                    .GetComponent<CarController>()
+                    .carEngineSound.gameObject;
+                audioSource.SetActive(true);
+                audioController.audioSourceCar = audioSource.GetComponent<AudioSource>();
+            }
         }
     }
 }

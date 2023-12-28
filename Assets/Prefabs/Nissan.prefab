@@ -646,7 +646,7 @@ Transform:
   m_GameObject: {fileID: 3840848865851896166}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: -1}
-  m_LocalPosition: {x: 0, y: 0.672, z: 2.282}
+  m_LocalPosition: {x: 0, y: 0.672, z: 2.324}
   m_LocalScale: {x: 1, y: 1, z: -0.0008}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -667,7 +667,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -916,13 +916,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4629028347321776786}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.060361233, y: -0.01006185, z: 0.017707335, w: -0.99796885}
+  m_LocalRotation: {x: 0.060523447, y: 0.009024088, z: -0.0005471944, w: 0.9981259}
   m_LocalPosition: {x: -0.06002283, y: 3.9004462, z: -7.296465}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4040397646582871400}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 6.94, y: 1.036, z: 0}
 --- !u!20 &102728539747195589
 Camera:
   m_ObjectHideFlags: 0
@@ -1005,7 +1005,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0

@@ -23,6 +23,11 @@
         public int lastCar;
         public int recordDistance;
 
+        public float sliderTotalVolume;
+        public float sliderCarVolume;
+        public float sliderMusicVolume;
+        public bool inVHSOn;
+
         // Поля (сохранения) можно удалять и создавать новые. При обновлении игры сохранения ломаться не должны
 
 

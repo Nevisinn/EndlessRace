@@ -1,44 +1,59 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using YG;
 
 public class AudioController : MonoBehaviour
 {
     [SerializeField]
-    private Sprite audioOn;
+    private Slider sliderTotalVolume;
 
     [SerializeField]
-    private Sprite audioOff;
+    private Slider sliderCarVolume;
 
     [SerializeField]
-    private Image audioBtnImage;
+    private Slider sliderMusicVolume;
 
     [SerializeField]
-    private Slider slider;
+    private AudioSource audioSourceBg;
 
-    // [SerializeField]
-    // private AudioClip clip;
-    // public AudioSource audioSource;
+    [NonSerialized]
+    public AudioSource audioSourceCar;
+
+    private void Awake()
+    {
+        if (YandexGame.SDKEnabled)
+            GetLoad();
+    }
+
+    private void GetLoad()
+    {
+        sliderTotalVolume.value = YandexGame.savesData.sliderTotalVolume;
+        sliderMusicVolume.value = YandexGame.savesData.sliderMusicVolume;
+        sliderCarVolume.value = YandexGame.savesData.sliderCarVolume;
+    }
+
+    // Подписываемся на событие GetDataEvent в OnEnable
+    private void OnEnable() => YandexGame.GetDataEvent += GetLoad;
+
+    // Отписываемся от события GetDataEvent в OnDisable
+    private void OnDisable() => YandexGame.GetDataEvent -= GetLoad;
 
     private void Update()
     {
-        AudioListener.volume = slider.value;
+        AudioListener.volume = sliderTotalVolume.value;
+        audioSourceBg.volume = sliderMusicVolume.value;
+        if (audioSourceCar != null)
+            audioSourceCar.volume = sliderCarVolume.value;
     }
 
-    // public void SetAudio()
-    // {
-    //     if (AudioListener.volume == 1)
-    //     {
-    //         AudioListener.volume = 0;
-    //         audioBtnImage.sprite = audioOff;
-    //     }
-    //     else
-    //     {
-    //         AudioListener.volume = 1;
-    //         audioBtnImage.sprite = audioOn;
-    //     }
-    //     // AudioListener.volume = AudioListener.volume == 1 ? 0 : 1;
-    //     // audioBtnImage.sprite = AudioListener.volume == 1 ? audioOff : audioOn;
-    // }
+    public void SaveSettings()
+    {
+        YandexGame.savesData.sliderTotalVolume = sliderTotalVolume.value;
+        YandexGame.savesData.sliderMusicVolume = sliderMusicVolume.value;
+        YandexGame.savesData.sliderCarVolume = sliderCarVolume.value;
+        YandexGame.SaveProgress();
+    }
 }
