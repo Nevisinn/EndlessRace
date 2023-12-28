@@ -40,6 +40,7 @@ public class ActiveCar : MonoBehaviour
                     .carEngineSound.gameObject;
                 audioSource.SetActive(true);
                 audioController.audioSourceCar = audioSource.GetComponent<AudioSource>();
+                audioController.audioSourceCar.volume = YandexGame.savesData.sliderCarVolume;
             }
         }
     }

@@ -20,9 +20,6 @@ public class Setting : MonoBehaviour
     [SerializeField]
     private AudioSource audioSourceBg;
 
-    [NonSerialized]
-    public AudioSource audioSourceCar;
-
     [SerializeField]
     private Toggle toggle;
 
@@ -43,10 +40,7 @@ public class Setting : MonoBehaviour
         sliderCarVolume.value = YandexGame.savesData.sliderCarVolume;
         toggle.isOn = YandexGame.savesData.inVHSOn;
         audioSourceBg.volume = sliderMusicVolume.value;
-
         AudioListener.volume = sliderTotalVolume.value;
-        if (audioSourceCar != null)
-            audioSourceCar.volume = sliderCarVolume.value;
     }
 
     // Подписываемся на событие GetDataEvent в OnEnable
