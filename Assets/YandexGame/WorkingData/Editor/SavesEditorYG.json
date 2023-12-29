@@ -1,5 +1,5 @@
 {
-    "idSave": 266,
+    "idSave": 21,
     "isFirstSession": false,
     "language": "ru",
     "promptDone": false,
@@ -10,10 +10,10 @@
         true,
         false
     ],
-    "Money": 22492,
+    "Money": 79,
     "indexPurchasedCars": [
         0,
-        1,
+        0,
         0,
         0,
         0,
@@ -23,10 +23,10 @@
         0,
         0
     ],
-    "lastCar": 1,
+    "lastCar": 0,
     "recordDistance": 0,
-    "sliderTotalVolume": 0.575641393661499,
-    "sliderCarVolume": 0.49772998690605166,
-    "sliderMusicVolume": 0.0,
+    "sliderTotalVolume": 1.0,
+    "sliderCarVolume": 0.2792506217956543,
+    "sliderMusicVolume": 1.0,
     "inVHSOn": false
 }

@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using GLTF.Schema;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,12 +24,16 @@ public class EndGame : MonoBehaviour
 
     [SerializeField]
     private AudioSource accidentSound;
+
+    [SerializeField]
+    private Button rewardBtn;
     private int money;
 
     bool isRewardBtnClick;
 
     public void End(int distance, int scores)
     {
+        rewardBtn.interactable = true;
         money = (distance + scores) / 100;
         endGameWindow.SetActive(true);
         totalDistanceTxt.text = distance.ToString();
@@ -63,6 +66,7 @@ public class EndGame : MonoBehaviour
         if (id == 1)
             moneyManager.AddMoney(money * 2);
         isRewardBtnClick = true;
+        rewardBtn.interactable = false;
         Time.timeScale = 0f;
     }
 

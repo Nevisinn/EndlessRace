@@ -37,6 +37,10 @@
             // Допустим, задать значения по умолчанию для отдельных элементов массива
 
             openLevels[1] = true;
+            sliderTotalVolume = 1;
+            sliderCarVolume = 0.5f;
+            sliderMusicVolume = 0.5f;
+            inVHSOn = true;
         }
     }
 }
